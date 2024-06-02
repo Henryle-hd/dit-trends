@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->execute()) {
             echo "New record created successfully";
             // Redirect to a success page
-            header("Location: ./html/trandes.html");
+            header("Location: ./login.php");
             exit(); // Ensure script stops execution after redirection
         } else {
             echo "Error: " . $stmt->error;
