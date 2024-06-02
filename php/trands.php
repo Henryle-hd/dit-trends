@@ -11,6 +11,7 @@ if (!isset($_SESSION["username"])) {
 }
 
 $username = $_SESSION["username"];
+$fullname = $_SESSION['full_name'];
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +34,7 @@ $username = $_SESSION["username"];
             <li><a href="">Assignment </a></li>
             <li><a href="">Test-collection</a></li>
             <li><a href="">free-Source </a></li>
+            <a href="./logout.php" class="a-btn a-btn-2">Log Out</a>
         </ul>
     </nav>
     <!-- line  -->
@@ -46,8 +48,8 @@ $username = $_SESSION["username"];
                         <img src="../assets/HD (18).jpg" class="post-man-imageReal">
                     </div>
                     <div class="post-man-name">
-                        <span class="username"><?php echo $username ?> &starf;</span>
-                        <span class="fullname">henry dioniz (student)</span>
+                        <span class="username">@<?php echo $username ?> &starf;</span>
+                        <span class="fullname"><?php echo $fullname ?> (student)</span>
                     </div>
                 </div>
                 <form action="../php/index.php" method="post" class="newPostForm">

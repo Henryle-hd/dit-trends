@@ -6,14 +6,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
     // Prepare and bind
-    $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username = ?");
+    $stmt = $conn->prepare("SELECT id, username, password, name FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
         // Bind result variables
-        $stmt->bind_result($id, $stored_username, $stored_password);
+        $stmt->bind_result($id, $stored_username, $stored_password, $full_name);
         $stmt->fetch();
 
         // Verify the password
@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
             $_SESSION['username'] = $stored_username;
             $_SESSION['user_id'] = $id;
+            $_SESSION['full_name'] = $full_name;
             header("Location: ./php/trands.php");
         } else {
             $errors['password'] = "Incorrect password.";
