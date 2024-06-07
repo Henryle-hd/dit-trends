@@ -14,7 +14,7 @@ $username = $_SESSION["username"];
 $fullname = $_SESSION['full_name'];
 ?>
 
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -40,12 +40,13 @@ $fullname = $_SESSION['full_name'];
     <nav>
         <h1 class="nav-header">🐸 Dit-Trend</h1>
         <ul class="nav-list">
-            <li><a href="../index.html">Home </a></li>
-            <li><a href="../html/trandes.html">Trends</a> </li>
-            <li id="current-link"><a href="../php/time-table.php">Time-Table </a></li>
-            <li><a href="">Assignment </a></li>
-            <li><a href="">Test-collection</a></li>
-            <li><a href="">free-Source </a></li>
+            <li><a href="./trands.php">Trends</a> </li>
+            <li><a href="#" id="current-link">Time-Table </a></li>
+            <li><a href="./assignment.php">Assignment </a></li>
+            <li><a href="./testCollection.php">Test-collection</a></li>
+            <li><a href="./free-source.php">free-Source </a></li>
+            <li><a href="#">Profile</a></li>
+            <a href="./logout.php" class="a-btn a-btn-2">Log Out</a>
         </ul>
     </nav>
     <!-- line  -->

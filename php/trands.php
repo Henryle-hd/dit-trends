@@ -37,7 +37,6 @@ $fullname = $_SESSION['full_name'];
                     success: function(response) {
                         if (parseInt(response) > 0) {
                             alert('There are ' + response + ' new dit trends posts!');
-                            // You can update the DOM here to notify the user
                         }
                     },
                     error: function(xhr, status, error) {
@@ -62,9 +61,9 @@ $fullname = $_SESSION['full_name'];
         <ul class="nav-list">
             <li id="current-link"><a href="">Trends</a> </li>
             <li><a href="../php/time-table.php">Time-Table </a></li>
-            <li><a href="">Assignment </a></li>
-            <li><a href="">Test-collection</a></li>
-            <li><a href="">free-Source </a></li>
+            <li><a href="../php/assignment.php">Assignment </a></li>
+            <li><a href="../php/testCollection.php">Test-collection</a></li>
+            <li><a href="../php/free-source.php">free-Source </a></li>
             <li><a href="#">Profile</a></li>
             <a href="./logout.php" class="a-btn a-btn-2">Log Out</a>
         </ul>
@@ -85,7 +84,7 @@ $fullname = $_SESSION['full_name'];
                     </div>
                 </div>
                 <form action="./post.php" method="post" enctype="multipart/form-data" class="newPostForm">
-                    <textarea name="posttext" id="" cols="68" rows="5" placeholder="Write something here!" class="wordsTopostArea"></textarea>
+                    <textarea name="posttext" id="" cols="68" rows="5" placeholder="Write something here!" class="wordsTopostArea" required></textarea>
                     <input type="file" name="imageUrl" accept=".jpg, .png, .gif">
                     <input type="submit" value="Post 🎯" class="reaction-btn">
                 </form>
@@ -120,7 +119,7 @@ $fullname = $_SESSION['full_name'];
                     }
 
                     $userStmt->close();
-                    $randomNumber = mt_rand(1, 7);
+                    $randomNumber = mt_rand(1, 47);
                     $randomProfile = mt_rand(20, 21);
             ?>
                     <div class="post-div">
